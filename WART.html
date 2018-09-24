@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>WhatsApp</title>
+</head>
+<body>
+<table>
+<tr>
+<td>
+User name:
+</td>
+<td>
+<input type="text" id="txtPhoneNumber" style="width:400px;" />
+</td>
+</tr>
+<tr>
+<td>
+Password:
+</td>
+<td>
+<input type="password" id="txtPassword" style="width:400px;" />
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="button" id="btnLogin" value="Login" />
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
+To:
+</td>
+<td>
+<input type="text" id="txtTo" style="width:400px;" />
+</td>
+</tr>
+<tr>
+<td>
+Message:
+</td>
+<td>
+<textarea id="txtMessage" style="width:400px; height:70px;"></textarea>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="button" id="btnSend" value="Send" />
+</td>
+</tr>
+</table>
+<ul id="status"></ul>
+<script src="Scripts/jquery-1.6.4.min.js"></script>
+<script src="Scripts/jquery.signalR-2.2.0.min"></script>
+<script type="text/javascript">
+$(function()
+{
+var chat = $.connection.chatHub;
+chat.client.notifyMessage = function (message) {
+var endcodeMessage = $('<div />').text(message).html();
+$('#status').append('<li>' + message + '</li>');
+};
+$.connection.hub.start().done(function () {
+$('#btnLogin').click(function ()
+{
+var phoneNumber = document.getElementById('txtPhoneNumber').value;
+var password = document.getElementById('txtPassword').value;
+chat.server.login(phoneNumber, password);
+});
+$('#btnSend').click(function ()
+{
+var to = document.getElementById('txtTo').value;
+var message = document.getElementById('txtMessage').value;
+chat.server.send(to, message);
+});
+});
+}
+)
+</script>
+<ul id="status"></ul>
+</body>
+</html>

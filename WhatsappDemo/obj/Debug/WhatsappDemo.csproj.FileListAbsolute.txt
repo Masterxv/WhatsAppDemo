@@ -1,0 +1,7 @@
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\bin\Debug\WhatsappDemo.exe.config
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\bin\Debug\WhatsappDemo.exe
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\bin\Debug\WhatsappDemo.pdb
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\bin\Debug\WhatsAppApi.dll
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\obj\Debug\WhatsappDemo.csprojResolveAssemblyReference.cache
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\obj\Debug\WhatsappDemo.exe
+C:\E\VS-Programs\WhatsappDemo\WhatsappDemo\obj\Debug\WhatsappDemo.pdb

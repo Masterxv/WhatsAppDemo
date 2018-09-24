@@ -20,7 +20,7 @@ namespace WhatsappDemo
         private static string SendMessage(String To, String Message)
         {
             string status = string.Empty;
-            WhatsApp wa = new WhatsApp("917709981177", "352038068257991", "Amit", false, false);
+            WhatsApp wa = new WhatsApp("917709981177", "xxxxxxxxxxxxxxxxxx", "Amit", false, false);
             wa.OnConnectSuccess += () =>
             {
                 wa.OnLoginSuccess += (phonenumber, data) =>
